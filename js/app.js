@@ -83,11 +83,16 @@ function buildCard(recipe) {
     `${CATEGORY_NAMES[recipe.category]} · ${recipe.difficulty}`
   );
 
-  const action = createElement(
-    'span',
-    'card-action',
-    '查看食譜 ↗'
-  );
+
+const action = createElement(
+  'a',
+  'card-action',
+  '查看食譜 ↗'
+);
+
+action.href = url;
+action.setAttribute('aria-label', `查看 ${recipe.title} 食譜`);
+
 
   foot.append(category, action);
   card.append(top, heading, summary, foot);
