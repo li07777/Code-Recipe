@@ -1,7 +1,9 @@
+
 {
   "files": [
     "bubble-sort-python.json",
     "linear-search-java.json",
-    "factorial-cpp.json"
+    "factorial-cpp.json",
+    "binary-search-java.json"
   ]
 }
