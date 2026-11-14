@@ -1,0 +1,41 @@
+{
+  "id": "linear-search-java",
+  "topic": "linear-search",
+  "title": "線性搜尋（Linear Search）",
+  "language": "Java",
+  "category": "searching",
+  "difficulty": "Beginner",
+  "summary": "由左到右逐一檢查陣列元素，回傳目標數字第一次出現的位置。",
+  "prerequisites": [
+    "Java 陣列",
+    "for 迴圈",
+    "方法與回傳值"
+  ],
+  "input": "陣列 {7, 4, 9, 2, 6}，目標值 9",
+  "output": "找到的索引 2（由 0 開始）",
+  "steps": [
+    "從陣列索引 0 開始巡訪每個元素。",
+    "比對當前元素是否等於目標值。",
+    "找到就立即回傳索引；若全部找完仍未找到則回傳 -1。"
+  ],
+  "code": "public class Main {\n    public static int linearSearch(int[] arr, int target) {\n        for (int i = 0; i < arr.length; i++) {\n            if (arr[i] == target) {\n                return i;\n            }\n        }\n        return -1;\n    }\n\n    public static void main(String[] args) {\n        int[] numbers = {7, 4, 9, 2, 6};\n        int target = 9;\n        System.out.println(linearSearch(numbers, target));\n    }\n}",
+  "sampleInput": "numbers = {7, 4, 9, 2, 6}; target = 9",
+  "sampleOutput": "2",
+  "timeComplexity": {
+    "best": "O(1)",
+    "average": "O(n)",
+    "worst": "O(n)"
+  },
+  "spaceComplexity": "O(1)",
+  "complexityNotes": "最佳情況第一個元素就符合；平均與最差情況需要檢查與 n 成正比的元素。額外只使用固定數量變數。",
+  "commonMistakes": [
+    "Java 陣列索引從 0 開始，第三個元素的索引是 2。",
+    "未找到時應回傳 -1，不能誤回傳 0。",
+    "檔案名稱應為 Main.java，才能編譯 public class Main。"
+  ],
+  "tags": [
+    "array",
+    "search",
+    "loop"
+  ]
+}

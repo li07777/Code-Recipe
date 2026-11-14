@@ -1,0 +1,41 @@
+{
+  "id": "factorial-cpp",
+  "topic": "factorial",
+  "title": "階乘（Factorial）",
+  "language": "C++",
+  "category": "algorithms",
+  "difficulty": "Beginner",
+  "summary": "利用迴圈計算非負整數 n 的階乘 n!，也就是 1 到 n 的乘積。",
+  "prerequisites": [
+    "C++17 基礎語法",
+    "for 迴圈",
+    "unsigned long long"
+  ],
+  "input": "程式內給定 n = 5",
+  "output": "5! = 120",
+  "steps": [
+    "設定非負整數 n，並將結果初始化為 1。",
+    "由 2 乘到 n，逐次累積乘積。",
+    "輸出階乘結果；0! 依定義也是 1。"
+  ],
+  "code": "#include <iostream>\n\nint main() {\n    const unsigned int n = 5;\n    unsigned long long result = 1;\n\n    for (unsigned int i = 2; i <= n; ++i) {\n        result *= i;\n    }\n\n    std::cout << n << \"! = \" << result << '\\n';\n    return 0;\n}",
+  "sampleInput": "n = 5",
+  "sampleOutput": "5! = 120",
+  "timeComplexity": {
+    "best": "O(n)",
+    "average": "O(n)",
+    "worst": "O(n)"
+  },
+  "spaceComplexity": "O(1)",
+  "complexityNotes": "對 n ≥ 1，迴圈執行 n-1 次；n = 0 是常數時間的特例。使用 unsigned long long 僅能安全儲存到 20!，更大的 n 會溢位。",
+  "commonMistakes": [
+    "0! 是 1，不是 0。",
+    "unsigned long long 在常見的 64 位實作下，21! 已超出可表示範圍。",
+    "不要將負整數輸入當作一般階乘處理。"
+  ],
+  "tags": [
+    "math",
+    "loop",
+    "factorial"
+  ]
+}
